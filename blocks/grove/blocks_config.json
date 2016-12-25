@@ -22,6 +22,8 @@
         "      </block>",
         "    </value>",
         "  </block>",
+        "  <block type=\"grove_light_sensor\">",
+        "  <block type=\"grove_temperature\">",
         "</category>"
     ],
     "extensions": ["Blockly.Arduino.Groove.init"]
