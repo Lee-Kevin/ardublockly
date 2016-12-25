@@ -47,4 +47,5 @@ Blockly.Arduino.Groove.extendPinTypes = function() {
   Blockly.Arduino.PinTypes.GROVE_JOYSTICK = 'GROVE JOYSTICK';
   Blockly.Arduino.PinTypes.GROVE_PIR = 'GROVE PIR';
   Blockly.Arduino.PinTypes.GROVE_TEMPERATURE = 'GROVE TEMPERATURE';
+  Blockly.Arduino.PinTypes.GROVE_LIGHT_SENSOR = 'GROVE LIGHT SENSOR';
 };
