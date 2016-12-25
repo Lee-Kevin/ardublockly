@@ -169,7 +169,7 @@ Blockly.Blocks['grove_lcd_rgb'] = {
    * @this Blockly.Block
    */
   init: function() {
-    this.setHelpUrl('http://seeedstudio.com/wiki/Grove_-_LCD_RGB_Backlight');
+    this.setHelpUrl('https://www.seeedstudio.com/Grove-LCD-RGB-Backlight-p-1643.html');
     this.setColour(Blockly.Blocks.groove.HUE);
     this.appendValueInput('LINE_1')
         .appendField(new Blockly.FieldImage(
@@ -189,4 +189,28 @@ Blockly.Blocks['grove_lcd_rgb'] = {
     var groveI2cId = Blockly.Arduino.Boards.selected.groveI2c[1];
     return Blockly.Arduino.Boards.selected.i2cPins[groveI2cId];
   }
+};
+
+Blockly.Blocks['grove_light_sensor'] = {
+  /**
+   * Grove Light Sensor module block definition.
+   * @this Blockly.Block
+   */
+  init: function() {
+    this.setHelpUrl(
+          'http://wiki.seeed.cc/Grove-Light_Sensor/');
+    this.setColour(Blockly.Blocks.groove.HUE);
+    this.appendDummyInput()
+        .appendField(new Blockly.FieldImage(
+            '/blocks/grove/img/light_sensor.png', 32, 32))
+        .appendField(Blockly.Msg.BLOCKS_GROVE_LIGHT_SENSOR)
+        .appendField(new Blockly.FieldDropdown(
+            Blockly.Arduino.Boards.selected.groveAnalog), 'CONNECTOR');
+    this.setOutput(true, Blockly.Types.NUMBER.output);
+    this.setTooltip(Blockly.Msg.BLOCKS_GROVE_LIGHT_SENSOR_TIP);
+  },
+  /** Updates the content of the the pin related fields.In this case analog. */
+  updateFields: Blockly.Blocks['grove_joystick'].updateFields,
+  /** Returns a list with the connector pins used. For this, just the first. */
+  connectorPinUsage: Blockly.Blocks['grove_led'].connectorPinUsage,
 };
