@@ -150,3 +150,15 @@ Blockly.Arduino['grove_lcd_rgb'] = function(block) {
   var code = 'lcd.clear();\nlcd.print(' + line1Text + ');\n';
   return code;
 };
+
+Blockly.Arduino['grove_light_sensor'] = function(block) {
+  var pins = block.connectorPinUsage();
+  Blockly.Arduino.reservePin(block, pins[0],
+      Blockly.Arduino.PinTypes.GROVE_LIGHT_SENSOR, 'this Grove module');
+
+  var pinSetupCode = 'pinMode(' + pins[0] + ', INPUT);';
+  Blockly.Arduino.addSetup('grove_light_sensor_' + pins[0], pinSetupCode, false);
+
+  var code = 'analogRead(' + pins[0] + ')';
+  return [code, Blockly.Arduino.ORDER_ATOMIC];
+};
